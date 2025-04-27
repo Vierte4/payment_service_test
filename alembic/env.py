@@ -1,3 +1,9 @@
+import sys
+from pathlib import Path
+
+# добавляем .. (= корень проекта) в PYTHONPATH
+sys.path.append(str(Path(__file__).resolve().parents[1]))
+
 from alembic import context
 from sqlalchemy import engine_from_config, pool
 from app.db.models import Base
